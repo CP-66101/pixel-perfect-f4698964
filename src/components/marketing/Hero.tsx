@@ -1,14 +1,4 @@
-import { motion, type Variants } from "framer-motion";
 import { WarriorWatermark } from "./WarriorWatermark";
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.08, ease: "easeOut" },
-  }),
-};
 
 export function Hero() {
   return (
@@ -31,15 +21,11 @@ export function Hero() {
       />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-5 lg:gap-10 lg:py-28">
         <div className="lg:col-span-3">
-          <motion.div custom={0} initial="hidden" animate="show" variants={fadeUp} className="eyebrow">
+          <div className="eyebrow animate-in fade-in slide-in-from-bottom-2 duration-700">
             Pakistan ke businesses ke liye banaya gaya
-          </motion.div>
-          <motion.h1
-            custom={1}
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="mt-6 font-display font-bold leading-[1.05] text-white"
+          </div>
+          <h1
+            className="mt-6 font-display font-bold leading-[1.05] text-white animate-in fade-in slide-in-from-bottom-3 duration-700 delay-100"
             style={{ fontSize: "clamp(2rem, 5.2vw, 3.5rem)" }}
           >
             Apna business —
@@ -54,45 +40,21 @@ export function Hero() {
             </span>
             <br />
             aur easy.
-          </motion.h1>
-          <motion.p
-            custom={2}
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="mt-7 max-w-[480px] text-[18px] leading-relaxed text-white/70"
-          >
+          </h1>
+          <p className="mt-7 max-w-[480px] text-[18px] leading-relaxed text-white/70 animate-in fade-in slide-in-from-bottom-3 duration-700 delay-200">
             A complete management system for your restaurant, shop, school, or clinic. Set up in 2 weeks. Starts from PKR 1,000/month.
-          </motion.p>
-          <motion.div
-            custom={3}
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="mt-9 flex flex-wrap gap-4"
-          >
+          </p>
+          <div className="mt-9 flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom-3 duration-700 delay-300">
             <a href="/signup" className="btn-gold">Abhi Sign Up Karein</a>
             <a href="#pricing" className="btn-outline-gold">Pricing Dekhein</a>
-          </motion.div>
-          <motion.p
-            custom={4}
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="mt-6 text-[13px] text-white/50"
-          >
+          </div>
+          <p className="mt-6 text-[13px] text-white/50 animate-in fade-in duration-700 delay-500">
             🔒  No credit card required  ·  Setup in 2 weeks  ·  Cancel anytime
-          </motion.p>
+          </p>
         </div>
-        <motion.div
-          custom={5}
-          initial="hidden"
-          animate="show"
-          variants={fadeUp}
-          className="lg:col-span-2"
-        >
+        <div className="lg:col-span-2 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
           <DashboardMock />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
