@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Spartype — Business Management Software for Pakistani SMEs" },
+      { name: "description", content: "A complete management system for your restaurant, shop, school, or clinic. Set up in 2 weeks. Starts from PKR 1,000/month." },
+      { name: "author", content: "Spar Type Pvt Ltd" },
+      { property: "og:title", content: "Spartype — Apna business, organized." },
+      { property: "og:description", content: "Vertical SaaS built for Pakistani restaurants, retail, schools and clinics. FBR-ready. Setup in 2 weeks." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
