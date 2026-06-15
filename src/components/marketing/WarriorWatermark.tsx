@@ -14,7 +14,7 @@ export function WarriorWatermark({
       aria-hidden="true"
       loading="lazy"
       className={`pointer-events-none select-none absolute ${className}`}
-      style={{ opacity, filter: "brightness(0) invert(1)" }}
+      style={{ opacity, filter: "brightness(0) invert(1)", zIndex: 0 }}
     />
   );
 }

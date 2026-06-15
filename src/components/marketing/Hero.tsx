@@ -8,7 +8,7 @@ export function Hero() {
     >
       <WarriorWatermark
         className="left-1/2 top-1/2 h-[120%] w-auto -translate-x-1/2 -translate-y-1/2"
-        opacity={0.04}
+        opacity={0.025}
       />
       {/* Subtle gold radial */}
       <div
