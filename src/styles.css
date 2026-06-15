@@ -59,10 +59,38 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Spartype brand tokens — exposed as Tailwind utilities */
+  --color-navy: var(--spartype-navy);
+  --color-navy-deep: var(--spartype-navy-deep);
+  --color-gold: var(--spartype-gold);
+  --color-gold-soft: var(--spartype-gold-soft);
+  --color-cream: var(--spartype-cream);
+  --color-charcoal: var(--spartype-charcoal);
+  --color-slate-ink: var(--spartype-slate);
+  --color-rule: var(--spartype-border);
+  --color-success: var(--spartype-success);
+  --color-error: var(--spartype-error);
+
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.25rem; /* 4px — Spartan, disciplined corners */
+
+  /* Spartype palette */
+  --spartype-navy: #1B2B4B;
+  --spartype-navy-deep: #0F1D30;
+  --spartype-gold: #C9A84C;
+  --spartype-gold-soft: #E0C57A;
+  --spartype-cream: #F8F5F0;
+  --spartype-charcoal: #1A1A1A;
+  --spartype-slate: #44546A;
+  --spartype-border: #E2DDD6;
+  --spartype-success: #2D7A4F;
+  --spartype-error: #C0392B;
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -138,7 +166,81 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--spartype-cream);
+    color: var(--spartype-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------- Spartype primitives ---------- */
+.gold-rule {
+  display: block;
+  width: 56px;
+  height: 2px;
+  background-color: var(--spartype-gold);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--spartype-gold);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background-color: var(--spartype-gold);
+  color: var(--spartype-navy);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  border-radius: 4px;
+  border: 1px solid var(--spartype-gold);
+  transition: box-shadow 200ms ease, transform 200ms ease, background-color 200ms ease;
+  cursor: pointer;
+}
+.btn-gold:hover {
+  background-color: var(--spartype-gold-soft);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--spartype-gold) 25%, transparent);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background-color: transparent;
+  color: var(--spartype-gold);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 4px;
+  border: 1px solid var(--spartype-gold);
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+  cursor: pointer;
+}
+.btn-outline-gold:hover {
+  background-color: color-mix(in oklab, var(--spartype-gold) 12%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--spartype-gold) 18%, transparent);
+}
+
+.section-pad {
+  padding-top: clamp(4rem, 8vw, 6.5rem);
+  padding-bottom: clamp(4rem, 8vw, 6.5rem);
 }
