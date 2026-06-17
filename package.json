@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "postbuild": "cp -r .output/public .",
-    "start": "node .output/server/index.mjs"
+    "start": "/opt/alt/alt-nodejs20/root/usr/bin/node server/index.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
